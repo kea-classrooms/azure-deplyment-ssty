@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration Success</title>
+    <style type="text/css">
+        span {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h2>Superhero added!</h2>
+    <span>Hero name:</span><span th:text="${hero.superheroName}"></span><br/>
+    <span>Real name:</span><span th:text="${hero.name}"></span><br/>
+    <span>Creation year:</span><span th:text="${hero.creationYear}"></span><br/>
+    <span>City:</span><span th:text="${hero.name}"></span><br/>
+    <span>Powers:</span><span th:text="${hero.superPowers}"></span><br/>
+</div>
+</body>
+</html>

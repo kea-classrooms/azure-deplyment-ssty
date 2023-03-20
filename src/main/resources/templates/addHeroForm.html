@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link th:href="@{/main.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Add hero</title>
+</head>
+<body>
+<h1>Tilføj superhelt</h1>
+
+<form action="#" th:action="@{/superheroes/add}" method="post" th:object="${hero}">
+    <label>Hero name:</label>
+    <input type="text" th:field="*{superheroName}" />
+    <br/>
+
+    <label>Real name:</label>
+    <input type="text" th:field="*{name}" />
+    <br/>
+
+    <label>Creation year:</label>
+    <input type="number" th:field="*{creationYear}" />
+    <br/>
+
+    <label>City:</label>
+    <select th:field="*{city}">
+        <option th:each="city : ${cities}" th:value="${city}" th:text="${city}"/>
+    </select>
+    <br/>
+
+    <label>Powers:</label><br/>
+        <span th:each="power : ${powers}">
+            <input type="checkbox" th:field="*{superPowers}" th:value="${power}" th:text="${power}" />
+        </span>
+    <button type="submit">Add superhero</button>
+</form>
+<a href="http://localhost:8080/superheroes/"><button>Back</button></a>
+</body>
+</html>

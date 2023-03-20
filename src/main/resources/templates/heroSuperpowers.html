@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link th:href="@{/main.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title th:text="${hero.getHname()} + ' | Powers'"></title>
+</head>
+<body>
+<div th:object="${hero}" >
+    <h1 th:text="*{getHname()}"></h1>
+    <p th:text="'Real name: ' + *{getRname()}"></p>
+    <p> Powers:</p>
+    <table>
+        <span th:each="power : *{getPowers()}">
+            <tr>
+                <td th:text="${power}"></td>
+            </tr>
+        </span>
+    </table>
+    <br/>
+    <a href="http://localhost:8080/superheroes/"><button>Back</button></a>
+</div>
+</body>
+</html>
